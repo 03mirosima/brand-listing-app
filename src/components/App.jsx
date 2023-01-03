@@ -1,9 +1,11 @@
+import { BrandFilterComponent } from "./BrandFilterComponent";
 import Header from "./Header";
 
 const App = () => {
   return (
     <>
       <Header />
+      <BrandFilterComponent />
     </>
   );
 };

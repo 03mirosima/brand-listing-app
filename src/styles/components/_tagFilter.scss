@@ -1,0 +1,26 @@
+@use "../variables";
+.tag-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  border: 1px solid variables.$light-grey-color;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 400;
+  cursor: pointer;
+  &__img {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+  }
+  &__find-button {
+    background: variables.$red-color;
+    padding: 6px;
+    border-radius: 7.2px;
+    margin-right: 5px;
+  }
+  &--active {
+    border: 1px solid variables.$red-color;
+  }
+}
