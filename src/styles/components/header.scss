@@ -1,0 +1,30 @@
+@use "../variables";
+header {
+  padding: 1em 0;
+  .nav {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    &__link {
+      &--sign-up-button {
+        background: variables.$red-color;
+        padding: 10px 15px;
+        border-radius: 30px;
+        text-decoration: none;
+        color: variables.$white-color;
+        margin-right: 10px;
+      }
+      &--profile-button {
+        background: variables.$dark-grey-color;
+        border-radius: 100px;
+        border-radius: 100px;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}
