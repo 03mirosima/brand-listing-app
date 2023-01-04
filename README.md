@@ -9,9 +9,9 @@ Kampanya Görüntüleme Uygulaması
 
 İlk olarak projeyi klonluyoruz
 
-Bundan sonra ######npm i komutunu çalıştırmalıyız
+Bundan sonra ***npm i*** komutunu çalıştırmalıyız
 
-Bundan sonra ise ######npm start komutunu çalıştırabiliriz
+Bundan sonra ise ***npm start*** komutunu çalıştırabiliriz
 
 ## Kullanılan Teknolojiler
 
