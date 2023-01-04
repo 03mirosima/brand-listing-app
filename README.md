@@ -1,6 +1,7 @@
 # Proje Hakkında
 
-Kampanya Görüntüleme Uygulaması
+***Uygulamanın canlı halini <a href="https://03mirosima.github.io/brand-listing-app/" target="_blank">burada</a> görebilirsiniz***
+
 
 ```
 ** Bazı firmaların kampanyaların filtrelenmesi ve kampanya detaylarının görülmesini sağlar.
