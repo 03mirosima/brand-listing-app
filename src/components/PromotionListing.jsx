@@ -1,11 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
-import {
-  getAllPromotions,
-  getFilteredPromotions,
-  getTags,
-} from "../store/dataSlice";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { getAllPromotions, getPromotionDetail } from "../store/dataSlice";
 import Slider from "react-slick";
+
 const sliderSettings = {
   arrows: false,
   dots: false,
@@ -40,13 +38,22 @@ const sliderSettings = {
 };
 export const PromotionListing = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   useEffect(() => {
     dispatch(getAllPromotions());
   }, [dispatch]);
+  const handlePromotionClick = (seoName, itemId) => {
+    navigate(`/campaign/${seoName}/${itemId}`);
+    dispatch(getPromotionDetail(itemId));
+  };
   const allPromotions = useSelector(({ data }) => data.allPromotions);
   const promotionCards = allPromotions.map((promotion) => {
     return (
-      <div className="card" key={promotion.Id}>
+      <div
+        className="card"
+        key={promotion.Id}
+        onClick={() => handlePromotionClick(promotion.SeoName, promotion.Id)}
+      >
         <div
           className="card__content"
           style={{

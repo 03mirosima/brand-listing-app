@@ -1,0 +1,35 @@
+@use "../variables";
+.promotion {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__image {
+    position: relative;
+    &--image {
+      border-radius: 16px 16px 16px 70px;
+    }
+    &--overlay-icon {
+      position: absolute;
+      left: 0px;
+      bottom: 0px;
+    }
+  }
+  &__info {
+    &--title {
+      font-size: 26px;
+      font-weight: 700;
+      text-align: center;
+    }
+  }
+  &__join-button {
+    border: none;
+    height: 56px;
+    width: 345px;
+    background: variables.$red-color;
+    color: variables.$white-color;
+    border-radius: 28px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+}

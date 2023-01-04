@@ -1,13 +1,16 @@
-import { BrandFilter } from "./BrandFilter";
+import { Routes, Route } from "react-router-dom";
 import Header from "./Header";
-import { PromotionListing } from "./PromotionListing";
+import { Home } from "./Home";
+import { PromotionDetail } from "./PromotionDetail";
 
 const App = () => {
   return (
     <>
       <Header />
-      <BrandFilter />
-      <PromotionListing />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/campaign/:SeoName/:Id" element={<PromotionDetail />} />
+      </Routes>
     </>
   );
 };

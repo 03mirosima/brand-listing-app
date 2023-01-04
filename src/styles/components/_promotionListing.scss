@@ -5,14 +5,14 @@
   border: 1px solid variables.$light-grey-color;
   min-height: 380px;
   min-width: 320px;
-  border-radius: 20px;
+  border-radius: 16px;
   padding: 5px;
   height: 400px;
   &__content {
     min-height: 380px;
     min-width: 305px;
     width: 305px;
-    border-radius: 20px 20px 20px 70px;
+    border-radius: 16px 16px 16px 70px;
     display: flex;
     align-items: flex-end;
     justify-content: center;
