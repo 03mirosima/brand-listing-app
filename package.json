@@ -1,4 +1,5 @@
 {
+  "homepage": "https://03mirosima.github.io",
   "name": "brand-listing-app",
   "version": "1.0.0",
   "description": "\"# brand-listing-app\"",
@@ -8,7 +9,8 @@
     "start": "webpack serve",
     "build": "webpack",
     "clean": "del -rf dist",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -24,6 +26,7 @@
     "babel-loader": "^9.1.0",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^6.7.3",
+    "gh-pages": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.7.2",
     "react-redux": "^8.0.5",

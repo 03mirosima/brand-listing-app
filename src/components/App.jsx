@@ -6,7 +6,7 @@ const App = () => {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/brand-listing-app" element={<Home />} />
         <Route path="/campaign/:SeoName/:Id" element={<PromotionDetail />} />
       </Routes>
     </>
