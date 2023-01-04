@@ -47,13 +47,20 @@ export const BrandFilter = () => {
     dispatch(getAllPromotions());
   }, [dispatch]);
   const allTags = useSelector(({ data }) => data.tags);
-
+  const loading = useSelector(({ data }) => data.loading);
   const handleTagClick = (tagId) => {
     setActive(tagId);
     tagId === 0
       ? dispatch(getAllPromotions())
       : dispatch(getFilteredPromotions(tagId));
   };
+  if (loading) {
+    return (
+      <div className="container container__loading">
+        <div id="loading"></div>
+      </div>
+    );
+  }
   const tagItems = allTags.map((item) => {
     return (
       <div

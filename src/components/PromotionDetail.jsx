@@ -4,7 +4,14 @@ import Header from "./Header";
 
 export const PromotionDetail = () => {
   const promotionDetail = useSelector(({ data }) => data.promotionDetail);
-  console.log(promotionDetail, "kk");
+  const loading = useSelector(({ data }) => data.loading);
+  if (loading) {
+    return (
+      <div className="container container__loading">
+        <div id="loading"></div>
+      </div>
+    );
+  }
   return (
     <>
       <div className="container container--promotion">
@@ -33,7 +40,12 @@ export const PromotionDetail = () => {
               }}
             ></div>
           </div>
-          <button className="promotion__join-button">Hemen Katıl</button>
+          <button
+            className="promotion__join-button"
+            dangerouslySetInnerHTML={{
+              __html: promotionDetail.BrandPromotionCardParticipationText,
+            }}
+          ></button>
         </div>
       </div>
     </>

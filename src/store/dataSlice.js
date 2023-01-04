@@ -72,24 +72,32 @@ const dataSlice = createSlice({
   name: "data",
   initialState: {
     allPromotions: [],
-    filteredPromotions: [],
     promotionDetail: [],
     tags: [],
+    loading: false,
   },
   reducers: {},
 
   extraReducers: {
+    [getTags.pending]: (state) => {
+      state.loading = true;
+    },
     [getTags.fulfilled]: (state, { payload }) => {
       state.tags = payload;
+      state.loading = false;
     },
     [getFilteredPromotions.fulfilled]: (state, { payload }) => {
-      state.filteredPromotions = payload;
+      state.allPromotions = payload;
     },
     [getAllPromotions.fulfilled]: (state, { payload }) => {
       state.allPromotions = payload;
     },
+    [getPromotionDetail.pending]: (state) => {
+      state.loading = true;
+    },
     [getPromotionDetail.fulfilled]: (state, { payload }) => {
       state.promotionDetail = payload;
+      state.loading = false;
     },
   },
 });
