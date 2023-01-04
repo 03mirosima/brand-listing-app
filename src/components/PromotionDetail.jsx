@@ -7,7 +7,7 @@ export const PromotionDetail = () => {
   console.log(promotionDetail, "kk");
   return (
     <>
-      <div className="container">
+      <div className="container container--promotion">
         <div className="promotion">
           <div className="promotion__image">
             <img
@@ -19,15 +19,15 @@ export const PromotionDetail = () => {
               src={promotionDetail.BrandIconUrl}
             />
           </div>
-          <div className="propmotion__info">
+          <div className="promotion__info">
             <div
-              className="promotion__info promotion__info--title"
+              className="promotion__info--title"
               dangerouslySetInnerHTML={{
                 __html: promotionDetail.Title,
               }}
             ></div>
             <div
-              className="promotion__info promotion__info--detail"
+              className="promotion__info--detail"
               dangerouslySetInnerHTML={{
                 __html: promotionDetail.Description,
               }}
