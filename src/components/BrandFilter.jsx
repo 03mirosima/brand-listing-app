@@ -1,50 +1,58 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { getTags } from "../store/dataSlice";
+import {
+  getAllPromotions,
+  getFilteredPromotions,
+  getTags,
+} from "../store/dataSlice";
 import Slider from "react-slick";
 import FindButton from "../images/find-icon.png";
-
-export const BrandFilterComponent = () => {
+const sliderSettings = {
+  arrows: false,
+  dots: false,
+  infinite: false,
+  slidesToShow: 10,
+  slidesToScroll: 3,
+  appendDots: (dots) => <ul>{dots}</ul>,
+  customPaging: (i) => <button></button>,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 5,
+        slidesToScroll: 5,
+      },
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+      },
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+      },
+    },
+  ],
+};
+export const BrandFilter = () => {
   const dispatch = useDispatch();
   const [active, setActive] = useState(0);
   useEffect(() => {
     dispatch(getTags());
+    dispatch(getAllPromotions());
   }, [dispatch]);
   const allTags = useSelector(({ data }) => data.tags);
-  const sliderSettings = {
-    arrows: false,
-    dots: false,
-    infinite: false,
-    slidesToShow: 10,
-    slidesToScroll: 3,
-    appendDots: (dots) => <ul>{dots}</ul>,
-    customPaging: (i) => <button></button>,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 5,
-          slidesToScroll: 5,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-        },
-      },
-    ],
-  };
+
   const handleTagClick = (tagId) => {
     setActive(tagId);
+    tagId === 0
+      ? dispatch(getAllPromotions())
+      : dispatch(getFilteredPromotions(tagId));
   };
   const tagItems = allTags.map((item) => {
     return (

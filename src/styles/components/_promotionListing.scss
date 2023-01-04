@@ -1,0 +1,41 @@
+@use "../variables";
+
+.card {
+  background: variables.$white-color;
+  border: 1px solid variables.$light-grey-color;
+  min-height: 380px;
+  min-width: 320px;
+  border-radius: 20px;
+  padding: 5px;
+  height: 400px;
+  &__content {
+    min-height: 380px;
+    min-width: 305px;
+    width: 305px;
+    border-radius: 20px 20px 20px 70px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  &__date {
+    position: relative;
+    bottom: 10px;
+    right: 8px;
+    background: variables.$dark-grey-color;
+    color: variables.$white-color;
+    padding: 5px 7px;
+    border-radius: 20px;
+    font-size: 13px;
+  }
+  &__info {
+    text-align: center;
+  }
+  svg {
+    position: relative;
+    z-index: -1;
+    bottom: 345px;
+  }
+}
