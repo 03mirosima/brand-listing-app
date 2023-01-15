@@ -47,7 +47,6 @@ export const getAllPromotions = createAsyncThunk(
     });
 
     const data = await response.json();
-    console.log(data, "all");
     return data;
   }
 );
@@ -64,7 +63,6 @@ export const getPromotionDetail = createAsyncThunk(
     });
 
     const data = await response.json();
-    console.log(data, "details");
     return data;
   }
 );

@@ -7,14 +7,14 @@ import {
 } from "../store/dataSlice";
 import Slider from "react-slick";
 import FindButton from "../images/find-icon.png";
+//Slick slider settings
 const sliderSettings = {
   arrows: false,
   dots: false,
   infinite: false,
   slidesToShow: 10,
   slidesToScroll: 3,
-  appendDots: (dots) => <ul>{dots}</ul>,
-  customPaging: (i) => <button></button>,
+
   responsive: [
     {
       breakpoint: 1024,
